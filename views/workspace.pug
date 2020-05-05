@@ -1,0 +1,93 @@
+extends layout
+
+block content
+  h1= title
+  button(class="open-button" onclick="openForm('12.1')") Create New Ticket
+  div(class="form-popup", id="myForm")
+    form(action="/workspace/create_ticket" class="form-container")
+      h1 Create new ticket
+      input(type="text" placeholder="Title" name="title")
+      select(name="ticketType" class="select")
+        option="story"
+        option="epic"
+        option="initiative"
+        option="risk"
+      input(type="text" placeholder="Linked To" name="link")
+      input(type="number" placeholder="Story Points" name="points")
+      select(name="iteration" class="select")
+        option="Iteration 1"
+        option="Iteration 2"
+        option="Iteration 3"
+        option="Iteration 4"
+        option="Iteration 5"
+        option="Iteration 6"
+      input(type="hidden" value=team)
+      button(type="submit" class="btn") Submit
+      button(type="button" class="btn cancel" onclick="closeForm()") Close
+
+  div(class='boards')
+    table(style='width:100%', border='1')
+      tr
+        td 12.1
+          div(class='board')
+            - if (typeof(tickets.iter1) !== 'undefined'){
+                for ticket in tickets.iter1
+                  .card(class="ticket")
+                    ul
+                      li= ticket.title
+                      li= ticket.type
+                      li= ticket.link
+                      li= ticket.points
+            -}
+        td 12.2
+          div(class='board')
+            //each ticket in tickets.iter2
+              p testing 
+        td 12.3
+          div(class='board')
+            //each ticket in tickets.iter3
+              p testing 
+      tr
+        td 12.4
+          div(class='board')
+            //each ticket in tickets.iter4
+              p testing 
+        td 12.5
+          div(class='board')
+            //each ticket in tickets.iter5
+              p testing 
+        td 12.6
+          div(class='board')
+            //each ticket in tickets.iter6
+              p testing 
+  script.
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCHkYpXf3LPs3TuxQIaC-GEN6i-o8qA68Y",
+      authDomain: "innovationapp-e8135.firebaseapp.com",
+      databaseURL: "https://innovationapp-e8135.firebaseio.com",
+      projectId: "innovationapp-e8135",
+      storageBucket: "innovationapp-e8135.appspot.com",
+      messagingSenderId: "259459503227",
+      appId: "1:259459503227:web:82c244fe946de646b8fede",
+      measurementId: "G-6LRC214X3Q"
+    };
+      // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var db = firebase.database();
+    $(document).ready(function() {
+      var ref = db.ref('exploit/board/12-1/tickets');
+      ref.on('value', function(data) {
+        alert("CHANGED!");
+        location.reload();
+      });
+    })
+    
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+    
+

@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+    script(src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js")
+    script(src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js")
+  body
+    <div id='urls'>
+      ul
+        li
+          a(href="/") Home
+        li
+          a(href='/workspace?team=exploit') Exploit 
+        li
+          a(href='/workspace?team=picte') Picte 
+        li
+          a(href='/workspace?team=server') Server 
+        li
+          a(href='/workspace?team=videocore') Videocore
+        li
+          a(href='/risks') Risks
+        li 
+          a(href='/dependencies') Cross-Team Dependencies
+        li
+          a(href='/calendar') Calendar
+    </div>
+    block content

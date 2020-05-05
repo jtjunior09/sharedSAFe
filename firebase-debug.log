@@ -1,0 +1,21 @@
+[debug] [2020-05-04T22:07:16.046Z] ----------------------------------------------------------------------
+[debug] [2020-05-04T22:07:16.048Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Jeffwee\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2020-05-04T22:07:16.048Z] CLI Version:   8.2.0
+[debug] [2020-05-04T22:07:16.048Z] Platform:      win32
+[debug] [2020-05-04T22:07:16.048Z] Node Version:  v12.16.3
+[debug] [2020-05-04T22:07:16.049Z] Time:          Mon May 04 2020 18:07:16 GMT-0400 (Eastern Daylight Time)
+[debug] [2020-05-04T22:07:16.049Z] ----------------------------------------------------------------------
+[debug] [2020-05-04T22:07:16.049Z] 
+[info] i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+
+[info] i  To change your data collection preference at any time, run `firebase logout` and log in again.
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=466960626&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
+[debug] [2020-05-04T22:07:22.797Z] >>> HTTP REQUEST POST https://accounts.google.com/o/oauth2/token  
+ {"code":"4/zQGX6_ARNjib7fWtBKZe6_9l0aScbBfhldyrQapdw14ak8Psx1s7-XfdkMy4rYSfUX9JM6UGPNxSaCuLhjJAqBU","client_id":"563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com","client_secret":"j9iVZfS8kkCEFUPaAeJV0sAi","redirect_uri":"http://localhost:9005","grant_type":"authorization_code"}
+[debug] [2020-05-04T22:07:23.045Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 04 May 2020 22:06:22 GMT","server":"scaffolding on HTTPServer2","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] +  Success! Logged in as jeffrey.travers90@gmail.com
