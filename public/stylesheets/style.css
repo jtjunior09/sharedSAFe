@@ -19,17 +19,28 @@ ul {
 .card {
   float:left;
   width: 20%;
-  background-color: grey;
   padding: 5px;
   margin: 5px;
   max-width: 100%;
   text-align: center;
   position: relative; 
 }
-.card ul {
-  background-color: grey;
 
+.card.ticket.story {
+  background-color: #a0c2fa !important;
 }
+.card.ticket.epic {
+  background-color: #f9fc9f !important;
+}
+.card.ticket.risk {
+  background-color: #fa484e !important;
+}
+.card.ticket.initiative {
+  background-color: #e4e6ca !important;
+}
+
+
+
 
 .card li {
   float: none;

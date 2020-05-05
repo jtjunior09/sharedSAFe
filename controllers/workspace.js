@@ -44,6 +44,7 @@ exports.create_ticket = function(req, res, next) {
     var ref = db.ref(team+'/'+'board/'+iteration+'/tickets');
     var newPushTicket = ref.push();
     newPushTicket.set(newTicket)
+    newPushTicket.update({updated: Date.now()});
 
     res.redirect('/workspace?team='+team);
 }

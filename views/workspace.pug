@@ -32,34 +32,63 @@ block content
           div(class='board')
             - if (typeof(tickets.iter1) !== 'undefined'){
                 for ticket in tickets.iter1
-                  .card(class="ticket")
-                    ul
-                      li= ticket.title
-                      li= ticket.type
-                      li= ticket.link
-                      li= ticket.points
+                  .card(class="ticket " + ticket.type)
+                    h3= ticket.title
+                    h3= ticket.type
+                    h3= ticket.link
+                    h3= ticket.points
             -}
         td 12.2
           div(class='board')
-            //each ticket in tickets.iter2
-              p testing 
+            - if (typeof(tickets.iter2) !== 'undefined'){
+                for ticket in tickets.iter2
+                  .card(class="ticket " + ticket.type)
+                    h3= ticket.title
+                    h3= ticket.type
+                    h3= ticket.link
+                    h3= ticket.points
+            -} 
         td 12.3
           div(class='board')
-            //each ticket in tickets.iter3
-              p testing 
+            - if (typeof(tickets.iter3) !== 'undefined'){
+                for ticket in tickets.iter3
+                  .card(class="ticket " + ticket.type)
+                    h3= ticket.title
+                    h3= ticket.type
+                    h3= ticket.link
+                    h3= ticket.points
+            -}
       tr
         td 12.4
           div(class='board')
-            //each ticket in tickets.iter4
-              p testing 
+            - if (typeof(tickets.iter4) !== 'undefined'){
+                for ticket in tickets.iter4
+                  .card(class="ticket " + ticket.type)
+                    h3= ticket.title
+                    h3= ticket.type
+                    h3= ticket.link
+                    h3= ticket.points
+            -}
         td 12.5
           div(class='board')
-            //each ticket in tickets.iter5
-              p testing 
+            - if (typeof(tickets.iter5) !== 'undefined'){
+                for ticket in tickets.iter5
+                  .card(class="ticket " + ticket.type)
+                    h3= ticket.title
+                    h3= ticket.type
+                    h3= ticket.link
+                    h3= ticket.points
+            -}
         td 12.6
           div(class='board')
-            //each ticket in tickets.iter6
-              p testing 
+            - if (typeof(tickets.iter6) !== 'undefined'){
+                for ticket in tickets.iter6
+                  .card(class="ticket " + ticket.type)
+                    h3= ticket.title
+                    h3= ticket.type
+                    h3= ticket.link
+                    h3= ticket.points
+            -}
   script.
     // Your web app's Firebase configuration
     var firebaseConfig = {
@@ -74,11 +103,12 @@ block content
     };
       // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-    var db = firebase.database();
+    const db = firebase.database();
     $(document).ready(function() {
-      var ref = db.ref('exploit/board/12-1/tickets');
-      ref.on('value', function(data) {
-        alert("CHANGED!");
+      console.log("READY!");
+      var ref = db.ref();
+      ref.on('child_changed', (data) => {
+        console.log(data);
         location.reload();
       });
     })
