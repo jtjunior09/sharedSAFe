@@ -1,7 +1,6 @@
 extends layout
 
 block content
-  h1= title
   button(class="open-button" onclick="openForm('12.1')") Create New Ticket
   div(class="form-popup", id="myForm")
     form(action="/workspace/create_ticket" class="form-container")
@@ -24,7 +23,7 @@ block content
       input(type="hidden" value=team)
       button(type="submit" class="btn") Submit
       button(type="button" class="btn cancel" onclick="closeForm()") Close
-
+  br
   div(class='boards')
     table(style='width:100%', border='1')
       tr

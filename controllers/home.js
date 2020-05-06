@@ -5,7 +5,7 @@ var db = admin.database();
 var teamList = require('../public/javascripts/settings.js').teams;
 
 exports.get_home = function(req, res, next) {
-    res.render('home', {title: 'Innovation App', teams: teamList });
+    res.render('home', {team: 'Home', title: 'Innovation App', teams: teamList });
 }
 
 exports.submit_user = function(req, res, next) {

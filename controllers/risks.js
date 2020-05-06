@@ -4,5 +4,5 @@ var db = admin.database();
 var teamList = require('../public/javascripts/settings.js').teams;
 
 exports.get_risks = function(req, res, next) {
-    res.render('risks', {title: "Risk Board"});
+    res.render('risks', {team: "Risk Board"});
 }

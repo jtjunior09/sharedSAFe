@@ -4,6 +4,6 @@ var db = admin.database();
 var teamList = require('../public/javascripts/settings.js').teams;
 
 exports.get_calendar = function(req, res, next) {
-    res.render('calendar', {title:"Calendar Space"});
+    res.render('calendar', {team:"Calendar Space"});
 }
 

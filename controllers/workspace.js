@@ -11,22 +11,14 @@ exports.get_workspace = function(req, res, next) {
     var ref = db.ref(team+'/'+'board');
     var handleChanges = ref.once('value', function(data) {
         dataJson = data.exportVal();
-        console.log(dataJson);
-        //console.log(dataJson['12-1']['tickets'])
+
         for (i = 0; i < iterations.length; i++) {
             key = 'iter' + (i+1).toString();
             tickets[key] = dataJson[iterations[i]]['tickets'];
         }
-        //console.log(tickets);
-       /* for (i = 0; i < dataJson['12-1']['tickets'].length; i++)
-        {
-            console.log(dataJson['12-1']['tickets'][i]);
-        } */
-        //res.write(tickets);
-        res.render('workspace', {team:team + "Work Space", tickets:tickets, iterations:iterations});
 
+        res.render('workspace', {team:team + " Work Space", tickets:tickets, iterations:iterations});
     });
-    //res.render('workspace', {title: team + " Work Space", db:null});
 }
 
 exports.create_ticket = function(req, res, next) {
